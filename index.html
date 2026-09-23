@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Pedidos - El Rincón Trujillano</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #fafafa; }
+        header { background-color: #d9534f; color: white; padding: 15px; text-align: center; border-radius: 5px; }
+        .container { display: flex; gap: 20px; margin-top: 20px; }
+        .menu-section, .order-section { background: white; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); flex: 1; }
+        .dish-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+        button { background-color: #5cb85c; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #4cae4c; }
+        .btn-danger { background-color: #d9534f; }
+        .btn-danger:hover { background-color: #c9302c; }
+        ul { padding-left: 0; list-style: none; }
+        li { margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Restaurante "El Rincón Trujillano" - Pedidos 🇵🇪</h1>
+    </header>
+
+    <div class="container">
+        <!-- Sección del Menú Típico -->
+        <div class="menu-section">
+            <h2>Platos Típicos</h2>
+            <div class="dish-item">
+                <span>Cabrito a la Norteña - S/ 35.00</span>
+                <button onclick="agregarAlPedido('Cabrito a la Norteña', 35)">Agregar</button>
+            </div>
+            <div class="dish-item">
+                <span>Seco de Pollo Trujillano - S/ 22.00</span>
+                <button onclick="agregarAlPedido('Seco de Pollo Trujillano', 22)">Agregar</button>
+            </div>
+            <div class="dish-item">
+                <span>Ceviche de Mero (Caleta de Huanchaco) - S/ 40.00</span>
+                <button onclick="agregarAlPedido('Ceviche de Mero', 40)">Agregar</button>
+            </div>
+        </div>
+
+        <!-- Sección de Resumen del Pedido -->
+        <div class="order-section">
+            <h2>Pedido Actual</h2>
+            <ul id="lista-pedido">
+                <!-- Los elementos se llenarán con JavaScript -->
+            </ul>
+            <h3>Total: S/ <span id="total-pagar">0.00</span></h3>
+            <button class="btn-danger" onclick="procesarPago()">Cobrar y Enviar a Cocina</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
